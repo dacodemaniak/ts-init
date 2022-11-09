@@ -13,6 +13,10 @@ export class POE {
         }
     }
 
+    public getBeginDate(): Date {
+        return this.beginDate
+    }
+
     public setEndDate(date: Date): void {
         if (this.beginDate !== undefined) {
             if (date > this.beginDate) {
@@ -21,5 +25,9 @@ export class POE {
         } else {
             this.endDate = date
         }
+    }
+
+    public getEndDate(): Date {
+        return this.endDate
     }
 }
