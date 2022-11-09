@@ -1,3 +1,5 @@
+import { DateConvertHelper } from "../helpers/date-convert-helper"
+
 export class Stagiaire {
     public lastName: string
     public firstName: string
@@ -18,5 +20,13 @@ export class Stagiaire {
 
     public getBirthDate(): Date {
         return this.birthDate
+    }
+
+    public getBirthDateAsString(): string {
+        try {
+            return DateConvertHelper.toFrDate(this.birthDate)
+        } catch(error: any) {
+            return error
+        }
     }
 }

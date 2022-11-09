@@ -1,3 +1,4 @@
+import { POE } from "./models/poe"
 import { Stagiaire } from "./models/stagiaire"
 
 /**
@@ -21,4 +22,9 @@ class Main {
 const app: Main = new Main()
 const stagiaire: Stagiaire = app.buildStagiaire('Aubert', 'Jean-Luc')
 stagiaire.setBirthDate(new Date(1968, 3, 30))
-console.log(`Stagiaire named : ${stagiaire.lastName} ${stagiaire.getBirthDate()}`)
+console.log(`Stagiaire named : ${stagiaire.lastName} ${stagiaire.getBirthDateAsString()}`)
+
+const poe: POE = new POE()
+poe.title = 'Fullstack Angular Java'
+poe.setBeginDate(new Date(2022, 10, 4))
+poe.setEndDate(new Date(2023, 1,3))

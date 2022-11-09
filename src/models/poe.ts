@@ -1,3 +1,5 @@
+import { DateConvertHelper } from "../helpers/date-convert-helper";
+
 export class POE {
     public title: string = ''
     private beginDate!: Date
@@ -29,5 +31,22 @@ export class POE {
 
     public getEndDate(): Date {
         return this.endDate
+    }
+
+    public getBeginDateAsString(): string {
+        try {
+            return DateConvertHelper.toFrDate(this.beginDate)
+        } catch(error: any) {
+            return 'Pas de date de début définie'
+        }
+        
+    }
+
+    public getEndDateAsString(): string {
+        try {
+            return DateConvertHelper.toFrDate(this.endDate)
+        } catch(error: any) {
+            return 'Pas de date de fin définie'
+        }
     }
 }
