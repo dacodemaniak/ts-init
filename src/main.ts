@@ -39,6 +39,7 @@ try {
 } catch(error: any) {
     console.log(error.message)
 }
+
 console.log('Après un second ajout ' + listStagiaire.getSize() + ' éléments')
 
 const poe: POE = new POE()

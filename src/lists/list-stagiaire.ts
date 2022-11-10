@@ -1,8 +1,15 @@
 import { Stagiaire } from "../models/stagiaire";
-import { List } from "./list";
 import { ListUnique } from "./list-unique";
 
-export class ListStagiaire extends ListUnique<Stagiaire> {}
+export class ListStagiaire extends ListUnique<Stagiaire> {
+
+    public sort(): Stagiaire[] {
+        const stagiaires: Array<Stagiaire> = Array.from(this.list.values())
+        return stagiaires.sort((s1: Stagiaire, s2: Stagiaire) => {
+            return s1.lastName.localeCompare(s2.lastName)
+        })
+    }
+}
 
 /**
  * Définir une variable booléenne (vrai ou faux) found avec la valeur faux (réputé pas trouvé)
