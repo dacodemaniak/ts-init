@@ -31,6 +31,7 @@ export abstract class ListUnique<T> extends List<T> {
          */
         let keyToRemove: number = 0
         this.list.forEach((value: T, key: number) => {
+            console.log(`value is : ${JSON.stringify(value)}`)
             if (value === item) {
                 keyToRemove = key
             }

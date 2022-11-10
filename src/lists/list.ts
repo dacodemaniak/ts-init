@@ -58,6 +58,7 @@ export abstract class List<T> {
         }
         return undefined
     }
+    
     private getNextIndex(): number {
         return this.getSize() + 1
     }

@@ -101,4 +101,23 @@ describe(`Abstract lists behaviour`, () => {
         expect(listStagiaire.getSize()).toBe(1)
                
     })
+
+    test(`Only for see console`, () => {
+        const poe1: POE = new POE()
+        poe1.title = 'DevOps'
+        poe1.setBeginDate(new Date(2023, 0, 2))
+        poe1.setEndDate(new Date(2023, 2, 3))
+
+        const listPoe: ListPoe = new ListPoe()
+        listPoe.addItem(poe1)
+
+        const poe2: POE = new POE()
+        poe2.title = 'Fullstack Java'
+        poe2.setBeginDate(new Date(2022, 10, 4))
+        poe2.setEndDate(new Date(2023, 1, 3))
+
+        listPoe.removeItem(poe1)
+
+        expect(true).toBeTruthy()
+    })
 })
