@@ -27,9 +27,18 @@ stagiaire.setBirthDate(new Date(1968, 3, 30))
 console.log(`Stagiaire named : ${stagiaire.lastName} ${stagiaire.getBirthDateAsString()}`)
 
 const listStagiaire: ListStagiaire = new ListStagiaire()
-listStagiaire.addItem(stagiaire)
+try {
+    listStagiaire.addItem(stagiaire)
+} catch(error: any) {
+    console.log(error.message)
+}
+
 console.log('Liste des stagiaires contient ' + listStagiaire.getSize() + ' éléments')
-listStagiaire.addItem(stagiaire)
+try {
+    listStagiaire.addItem(stagiaire)
+} catch(error: any) {
+    console.log(error.message)
+}
 console.log('Après un second ajout ' + listStagiaire.getSize() + ' éléments')
 
 const poe: POE = new POE()
@@ -38,6 +47,16 @@ poe.setBeginDate(new Date(2022, 10, 4))
 poe.setEndDate(new Date(2023, 1,3))
 
 const listPoe: ListPoe = new ListPoe()
-listPoe.addItem(poe)
-listPoe.addItem(poe)
+try {
+    listPoe.addItem(poe)
+} catch(error: any) {
+    console.log(error.message)
+}
+
+try {
+    listPoe.addItem(poe)
+} catch(error: any) {
+    console.log(error.message)
+}
+
 console.log(`Liste POE contient ${listPoe.getSize()} éléments`)

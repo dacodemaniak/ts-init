@@ -1,21 +1,8 @@
 import { Stagiaire } from "../models/stagiaire";
 import { List } from "./list";
+import { ListUnique } from "./list-unique";
 
-export class ListStagiaire extends List<Stagiaire> {
-    public addItem(item: Stagiaire): void {
-        let found: boolean = false
-        for(const existingItem of this.list) {
-            if (item === existingItem) {
-                found = true
-                break
-            }
-        }
-
-        if (found === false) {
-            super.addItem(item)
-        }
-    }
-}
+export class ListStagiaire extends ListUnique<Stagiaire> {}
 
 /**
  * Définir une variable booléenne (vrai ou faux) found avec la valeur faux (réputé pas trouvé)

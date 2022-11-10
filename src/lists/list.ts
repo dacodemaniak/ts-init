@@ -1,8 +1,8 @@
 export abstract class List<T> {
-    protected list: Array<T> = [] // Type can be any[]
+    protected list: Map<number, T> = new Map<number, T>()
 
     public addItem(item: T): void {
-        this.list.push(item)
+        this.list.set(this.getNextIndex(), item)
     }
 
     public removeItem(item: T): void {}
@@ -14,6 +14,10 @@ export abstract class List<T> {
     }
 
     public getSize(): number {
-        return this.list.length
+        return this.list.size
+    }
+
+    private getNextIndex(): number {
+        return this.getSize() + 1
     }
 }

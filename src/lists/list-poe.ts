@@ -1,10 +1,5 @@
 import { POE } from "../models/poe";
 import { List } from "./list";
+import { ListUnique } from "./list-unique";
 
-export class ListPoe extends List<POE> {
-    public addItem(item: POE): void {
-        if (!this.list.includes(item)) {
-            super.addItem(item)
-        }
-    }
-}
+export class ListPoe extends ListUnique<POE> {}
