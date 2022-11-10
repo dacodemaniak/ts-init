@@ -3,7 +3,7 @@ export class DateConvertHelper {
         if (date instanceof Date) {
             const options: any = { year: 'numeric', month: 'numeric', day: 'numeric' }
             const slashesDate: string = date.toLocaleDateString('fr-FR', options)
-            return slashesDate.replace('/', '-')
+            return slashesDate.replace('/', '-').replace('/', '-')
         }
         throw new Error('A date was not provided')
     }
