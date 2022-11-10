@@ -1,3 +1,5 @@
+import { ListPoe } from "./lists/list-poe"
+import { ListStagiaire } from "./lists/list-stagiaire"
 import { POE } from "./models/poe"
 import { Stagiaire } from "./models/stagiaire"
 
@@ -24,7 +26,18 @@ const stagiaire: Stagiaire = app.buildStagiaire('Aubert', 'Jean-Luc')
 stagiaire.setBirthDate(new Date(1968, 3, 30))
 console.log(`Stagiaire named : ${stagiaire.lastName} ${stagiaire.getBirthDateAsString()}`)
 
+const listStagiaire: ListStagiaire = new ListStagiaire()
+listStagiaire.addItem(stagiaire)
+console.log('Liste des stagiaires contient ' + listStagiaire.getSize() + ' éléments')
+listStagiaire.addItem(stagiaire)
+console.log('Après un second ajout ' + listStagiaire.getSize() + ' éléments')
+
 const poe: POE = new POE()
 poe.title = 'Fullstack Angular Java'
 poe.setBeginDate(new Date(2022, 10, 4))
 poe.setEndDate(new Date(2023, 1,3))
+
+const listPoe: ListPoe = new ListPoe()
+listPoe.addItem(poe)
+listPoe.addItem(poe)
+console.log(`Liste POE contient ${listPoe.getSize()} éléments`)
